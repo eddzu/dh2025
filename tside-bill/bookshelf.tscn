@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://j31tv5721eh2"]
+
+[ext_resource type="Texture2D" uid="uid://byialerjswd1c" path="res://tiles/16 Bit School Asset Pack/Bookcase 2.png" id="1_bhfym"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyyaw"]
+size = Vector2(62, 26)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bhfym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 18)
+shape = SubResource("RectangleShape2D_cyyaw")
