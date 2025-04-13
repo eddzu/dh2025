@@ -165,7 +165,6 @@ radius = 30.151
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 texture_filter = 1
-scale = Vector2(1, 0.995506)
 motion_mode = 1
 floor_stop_on_slope = false
 floor_block_on_wall = false
@@ -184,10 +183,12 @@ shape = SubResource("RectangleShape2D_ij6vw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 1.00451)
-zoom = Vector2(8, 8)
+scale = Vector2(1.00813, 0.992467)
+zoom = Vector2(5, 5)
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(11, 9.04063)
+unique_name_in_owner = true
+position = Vector2(10, 9)
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("3_i3pqv")

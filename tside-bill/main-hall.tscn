@@ -5,19 +5,8 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -1
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0728426, 0.0728426, 0.0728426, 1)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-scale = Vector2(0.159999, 0.159999)
+scale = Vector2(0.239998, 0.239998)
 
 [node name="Hall" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(-1281, 129)
@@ -38,5 +27,16 @@ polygon = PackedVector2Array(-3918, -167, -3918, 611, -3968, 627, -3990, -167)
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-862.504, 131.251, -868.754, 337.502, -943.754, 387.502, -1050, 400.002, -2212.51, 406.252, -2300.01, 331.251, -2287.51, 131.251)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_2tbw6")]
-position = Vector2(164, 57)
+scale = Vector2(1, 1)
