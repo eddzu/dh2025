@@ -15,18 +15,32 @@ func _ready():
 	print(blackbox)
 	#target_node.visible = false
 	blackbox.visible = false
-
+	
 func interact():
-	if not has_interacted:
+	if not GlobalScript.visited_rooms.has("classroom"):
 		blackbox.visible = true
 		#target_node.text = "changed text"
-		full_text = "Ugh, it's you... I suppose you want that key, but first, fetch me a coffee. It should be from the vending machine,\nwhich existed already when I was studying here... Nostalgic."
-		
+		full_text = "Ugh, it's you... I suppose you want that key, but first, fetch me a coffee. \n It should be from the vending machine, which existed already when I was studying here... Nostalgic."
+		GlobalScript.visited_rooms["classroom"] = true
 		type_text(full_text)
 		has_interacted = true
 	else:
+		if (GlobalScript.hasCoffee):
+			var result = ApiCall.api_answer("grumpy")
+			if result.has("text_answer"):
+				var text_answer = result["text_answer"]
+			else: 
+				var text_answer = "This item is no good!";
+			if result.has("decision"):
+				var decision = result["decision"]
+			else:
+				var decision = false;
+		else:
+			var text_answer = "Pfff, I only want coffee from FRI coffee machine!"
+			
 		blackbox.visible = true
-		full_text = "Did you bring anything useful?"
+		full_text = ApiCall.api_answer("grumpy");
+		#full_text = "Thank you for the delicious coffee!"
 		type_text(full_text)
 
 func type_text(full_text):

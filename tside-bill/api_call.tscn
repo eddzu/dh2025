@@ -1,3 +1,5 @@
 [gd_scene format=3 uid="uid://18frg1u4bj7x"]
 
 [node name="api_call" type="Node2D"]
+
+[node name="call_api2" type="Node2D" parent="."]
