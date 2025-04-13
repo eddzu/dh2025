@@ -5,6 +5,7 @@ var blackbox
 var full_text
 var current_text = ""
 var has_interacted = false
+var text_answer;
 
 
 func _ready():
@@ -28,18 +29,18 @@ func interact():
 		if (GlobalScript.hasCoffee):
 			var result = ApiCall.api_answer("grumpy")
 			if result.has("text_answer"):
-				var text_answer = result["text_answer"]
+				text_answer = result["text_answer"]
 			else: 
-				var text_answer = "This item is no good!";
+				text_answer = "This item is no good!";
 			if result.has("decision"):
 				var decision = result["decision"]
 			else:
 				var decision = false;
 		else:
-			var text_answer = "Pfff, I only want coffee from FRI coffee machine!"
+			text_answer = "Pfff, I only want coffee from FRI coffee machine!"
 			
 		blackbox.visible = true
-		full_text = ApiCall.api_answer("grumpy");
+		full_text = text_answer;
 		#full_text = "Thank you for the delicious coffee!"
 		type_text(full_text)
 

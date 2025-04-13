@@ -5,6 +5,7 @@ var blackbox
 var full_text
 var current_text = ""
 var has_interacted = 0
+var decision;
 
 
 func _ready():
@@ -17,22 +18,22 @@ func _ready():
 	blackbox.visible = false
 
 func interact():
-	if has_interacted == 0:
-		blackbox.visible = true
-		#target_node.text = "changed text"
 		full_text = "You stare longingly at the machine. It stares back, silently judging you."
+		var result = ApiCall.api_answer("grumpy")
+		if result.has("text_answer"):
+			full_text = result["text_answer"]
+		else: 
+			full_text = "This item is no good!";
+		if result.has("decision"):
+			decision = result["decision"]
+			GlobalScript.hasCoffee = true;
+		else:
+			decision = false;
+			
+		blackbox.visible = true;
+		type_text(full_text);
 		
-		type_text(full_text)
-		has_interacted = 1
-	elif has_interacted == 1:
-		has_interacted = 2
-		blackbox.visible = true
-		full_text = "Still no cup? Even the coffee machine's losing hope in you."
-		type_text(full_text)
-	else:
-		full_text = "A perfect pour. You're now caffeinated and dangerous."
-		blackbox.visible = true
-		type_text(full_text)
+		
 			
 
 func type_text(full_text):
