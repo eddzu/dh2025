@@ -9,8 +9,10 @@ var has_interacted = false
 
 func _ready():
 	# Directly access the node using the full path
-	target_node = get_node("/root/SkretRoom/textbox/CanvasLayer/ColorRect/HBoxContainer/Label")
-	blackbox = get_node("/root/SkretRoom/textbox/CanvasLayer")
+	target_node = get_node("/root/classroom/textbox/CanvasLayer/ColorRect/HBoxContainer/Label")#/SkretRoom/textbox/CanvasLayer/ColorRect/HBoxContainer/Label")
+	print(target_node)
+	blackbox = get_node("/root/classroom/textbox/CanvasLayer")
+	print(blackbox)
 	#target_node.visible = false
 	blackbox.visible = false
 

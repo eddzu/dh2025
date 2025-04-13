@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkqypp50dnid0"]
+[gd_scene load_steps=8 format=3 uid="uid://dkqypp50dnid0"]
 
 [ext_resource type="Texture2D" uid="uid://bn1icfq82wl7j" path="res://Levels/classroom.png" id="1_ysqh3"]
 [ext_resource type="PackedScene" uid="uid://dncvxo6jlrayx" path="res://player.tscn" id="2_2hgm5"]
+[ext_resource type="PackedScene" uid="uid://cifc2nmqoiuei" path="res://dida.tscn" id="3_wx4mr"]
+[ext_resource type="PackedScene" uid="uid://b61w4wh0mmgvu" path="res://textbox.tscn" id="4_wnraa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hgm5"]
 size = Vector2(473, 139)
@@ -57,3 +59,9 @@ shape = SubResource("RectangleShape2D_wnraa")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_2hgm5")]
 position = Vector2(168, 212)
+
+[node name="dida" parent="." instance=ExtResource("3_wx4mr")]
+position = Vector2(226, 102)
+
+[node name="textbox" parent="." instance=ExtResource("4_wnraa")]
+position = Vector2(72, 255)
