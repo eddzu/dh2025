@@ -13,10 +13,12 @@ size = Vector2(665, 241.5)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CoffeeMachine" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
 position = Vector2(-4, 3)
 texture = ExtResource("1_rq0kd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+texture_filter = 1
 position = Vector2(-10, 322.5)
 shape = SubResource("RectangleShape2D_ujgln")
 

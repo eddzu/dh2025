@@ -311,7 +311,7 @@ zoom = Vector2(6, 6)
 unique_name_in_owner = true
 scale = Vector2(0.41744, 0.41744)
 sprite_frames = SubResource("SpriteFrames_7hik5")
-animation = &"camera"
+animation = &"hidden"
 autoplay = "hidden"
 metadata/FlipUp = false
 

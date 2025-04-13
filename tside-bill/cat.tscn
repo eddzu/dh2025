@@ -126,10 +126,11 @@ animations = [{
 [node name="cat" type="CharacterBody2D"]
 
 [node name="rig" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_vpob0")
 animation = &"up"
-frame_progress = 0.512707
+frame_progress = 0.945598
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hcucf")
