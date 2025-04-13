@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var sped: float = 100
+var sped: float = 5000
 
 func _physics_process(delta: float) -> void:
 	var dir = Input.get_vector("left", "right", "up", "down")

@@ -4,7 +4,6 @@ var target_node
 var blackbox
 var full_text
 var current_text = ""
-var has_interacted = false
 
 
 func _ready():
@@ -15,17 +14,11 @@ func _ready():
 	blackbox.visible = false
 
 func interact():
-	if not has_interacted:
-		blackbox.visible = true
-		#target_node.text = "changed text"
-		full_text = "This is the new animated text! I need to generate a really\nlong text so that i can test this functionality itd itd"
+	blackbox.visible = true
+	#target_node.text = "changed text"
+	full_text = "Go away!"
 		
-		type_text(full_text)
-		has_interacted = true
-	else:
-		blackbox.visible = true
-		full_text = "Did you bring anything useful?"
-		type_text(full_text)
+	type_text(full_text)
 
 func type_text(full_text):
 	current_text = ""
@@ -49,3 +42,4 @@ func type_text(full_text):
 
 func going():
 	blackbox.visible = false
+	hasKey = true

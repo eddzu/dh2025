@@ -20,7 +20,7 @@ func interact():
 	if not has_interacted:
 		blackbox.visible = true
 		#target_node.text = "changed text"
-		full_text = "This is the new animated text! I need to generate a really\nlong text so that i can test this functionality itd itd"
+		full_text = "Ugh, it's you... I suppose you want that key, but first, fetch me a coffee. It should be from the vending machine,\nwhich existed already when I was studying here... Nostalgic."
 		
 		type_text(full_text)
 		has_interacted = true
