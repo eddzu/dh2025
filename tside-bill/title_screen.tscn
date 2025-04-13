@@ -18,6 +18,7 @@ offset_right = -142.0
 offset_bottom = -108.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.0785, 1.0785)
 script = ExtResource("1_v6p8y")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -26,7 +27,7 @@ offset_left = 2.0
 offset_top = 3.0
 offset_right = 1538.0
 offset_bottom = 1027.0
-scale = Vector2(0.746402, 0.627019)
+scale = Vector2(1.15932, 0.973892)
 texture = ExtResource("2_013yr")
 
 [node name="StartButton" type="TextureButton" parent="TextureRect"]
