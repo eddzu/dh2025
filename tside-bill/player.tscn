@@ -225,7 +225,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"flip_down",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -311,7 +311,7 @@ zoom = Vector2(6, 6)
 unique_name_in_owner = true
 scale = Vector2(0.41744, 0.41744)
 sprite_frames = SubResource("SpriteFrames_7hik5")
-animation = &"hidden"
+animation = &"flip_up"
 autoplay = "hidden"
 metadata/FlipUp = false
 
