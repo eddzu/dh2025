@@ -6,3 +6,4 @@
 script = ExtResource("1_wtcfe")
 
 [node name="objectSpawner" type="Sprite2D" parent="."]
+unique_name_in_owner = true

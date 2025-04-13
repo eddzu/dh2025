@@ -6,10 +6,9 @@ var speed: float = 200
 func _on_cat_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		shit_is_going_down = 1
-		var spawner = body.find_children("objectSpawner")[0].get_children()
-		for x in spawner:
-			x.remove_child(x)
-
+		var spawner = %objectSpawner
+		spawner.texture = null
+		
 func _process(delta: float) -> void:
 	if shit_is_going_down == 1:
 		%rig.play("left")
