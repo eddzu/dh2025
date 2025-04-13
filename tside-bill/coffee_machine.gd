@@ -4,7 +4,7 @@ var target_node
 var blackbox
 var full_text
 var current_text = ""
-var has_interacted = false
+var has_interacted = 0
 
 
 func _ready():
@@ -17,17 +17,23 @@ func _ready():
 	blackbox.visible = false
 
 func interact():
-	if not has_interacted:
+	if has_interacted == 0:
 		blackbox.visible = true
 		#target_node.text = "changed text"
-		full_text = "Ugh, it's you... I suppose you want that key, but first, fetch me a coffee. It should be from the vending machine,\nwhich existed already when I was studying here... Nostalgic."
+		full_text = "You stare longingly at the machine. It stares back, silently judging you."
 		
 		type_text(full_text)
-		has_interacted = true
-	else:
+		has_interacted = 1
+	elif has_interacted == 1:
+		has_interacted = 2
 		blackbox.visible = true
-		full_text = "Did you bring anything useful?"
+		full_text = "Still no cup? Even the coffee machine's losing hope in you."
 		type_text(full_text)
+	else:
+		full_text = "A perfect pour. You're now caffeinated and dangerous."
+		blackbox.visible = true
+		type_text(full_text)
+			
 
 func type_text(full_text):
 	current_text = ""
@@ -51,3 +57,4 @@ func type_text(full_text):
 
 func going():
 	blackbox.visible = false
+	

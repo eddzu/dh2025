@@ -2,9 +2,16 @@ extends CharacterBody2D
 
 var sped: float = 5000
 
+var base_speed: float = 5000
+var run_multiplier: float = 1.5
+
 func _physics_process(delta: float) -> void:
+	var is_running = Input.is_action_pressed("ui_shift") 	
+	var current_speed = base_speed * (run_multiplier if is_running else 1.0)
+	%AnimatedSprite2D.speed_scale = (2.0 if is_running else 1.0)
+	
 	var dir = Input.get_vector("left", "right", "up", "down")
-	velocity = dir * Vector2(sped, sped) * delta
+	velocity = dir * Vector2(current_speed, current_speed) * delta
 	
 	# Determine which animation to play based on direction
 	if dir != Vector2.ZERO:
@@ -21,7 +28,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		%AnimatedSprite2D.stop()
 
-	move_and_slide()	
+	move_and_slide()
 
 func _input(event) -> void:
 	if event.is_action_pressed("phone"):
@@ -34,6 +41,7 @@ func _input(event) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	print(body)
 	if body.has_method('interact'):
 		#show textbox
 		body.interact()
