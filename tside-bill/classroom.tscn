@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkqypp50dnid0"]
+[gd_scene load_steps=7 format=3 uid="uid://dkqypp50dnid0"]
 
 [ext_resource type="Texture2D" uid="uid://bn1icfq82wl7j" path="res://Levels/classroom.png" id="1_ysqh3"]
 [ext_resource type="PackedScene" uid="uid://dncvxo6jlrayx" path="res://player.tscn" id="2_2hgm5"]
@@ -11,6 +11,9 @@ size = Vector2(461.5, 134)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnraa"]
 size = Vector2(216.5, 137.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pq1j3"]
+size = Vector2(130.827, 39.9862)
 
 [node name="classroom" type="Node2D"]
 
@@ -55,5 +58,14 @@ shape = SubResource("RectangleShape2D_wx4mr")
 position = Vector2(454, 289)
 shape = SubResource("RectangleShape2D_wnraa")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_2hgm5")]
+[node name="c2m" type="Area2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/c2m"]
+position = Vector2(505.304, 756.352)
+scale = Vector2(1.49014, 0.595471)
+shape = SubResource("RectangleShape2D_pq1j3")
+
+[node name="CharacterBody2D" parent="." groups=["Player"] instance=ExtResource("2_2hgm5")]
 position = Vector2(168, 212)
+
+[connection signal="body_entered" from="StaticBody2D/c2m" to="CharacterBody2D" method="_on_c_2m_body_entered"]

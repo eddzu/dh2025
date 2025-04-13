@@ -1,5 +1,5 @@
 extends Node2D
-
+@onready var fon = %fon
 @onready var marker = %Marker2D
 # Path to your Python file in the project:
 var python_script_path = ProjectSettings.globalize_path("res://gemini/script.py")
@@ -14,10 +14,10 @@ func _ready():
 	sprite.position = get_viewport_rect().size / 2
 
 func _input(event):
-	if event.is_action_pressed("run_script") and %fon.get_meta("FlipUp",false):
-		%fon.play("camera")
+	if event.is_action_pressed("run_script") and fon.get_meta("FlipUp",false):
+		fon.play("flip_down")
 		run_python_script()
-		%fon.play("main")
+		fon.play("main")
 
 func run_python_script():
 	# 1. Find the *actual OS path* for user://output2.png

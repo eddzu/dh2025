@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://4lxe14qn3f1n"]
+[gd_scene load_steps=10 format=3 uid="uid://4lxe14qn3f1n"]
 
 [ext_resource type="Texture2D" uid="uid://cpocfwd8ihig2" path="res://tiles/wc.png" id="1_motb0"]
 [ext_resource type="PackedScene" uid="uid://dncvxo6jlrayx" path="res://player.tscn" id="2_1efw3"]
@@ -10,6 +10,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_motb0"]
 radius = 53.0094
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mulk"]
+size = Vector2(185.714, 42.8571)
 
 [node name="SkretRoom" type="Node2D"]
 
@@ -41,8 +44,14 @@ texture = ExtResource("1_motb0")
 position = Vector2(-387, 282)
 shape = SubResource("CircleShape2D_motb0")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_1efw3")]
-position = Vector2(-77, 89)
+[node name="w2m" type="Area2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/w2m"]
+position = Vector2(-3.57144, 392.857)
+shape = SubResource("RectangleShape2D_4mulk")
+
+[node name="CharacterBody2D" parent="." groups=["Player"] instance=ExtResource("2_1efw3")]
+position = Vector2(-26, 73)
 
 [node name="textbox" parent="." instance=ExtResource("3_1efw3")]
 z_index = 1
@@ -57,3 +66,6 @@ script = ExtResource("6_4mulk")
 
 [node name="cat" parent="." instance=ExtResource("7_4mulk")]
 position = Vector2(2, 73)
+
+[connection signal="body_entered" from="StaticBody2D/w2m" to="CharacterBody2D" method="_on_w_2m_body_entered"]
+[connection signal="body_entered" from="StaticBody2D/w2m" to="CharacterBody2D" method="_on_area_2d_body_entered"]

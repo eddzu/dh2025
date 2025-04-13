@@ -4,8 +4,7 @@
 [ext_resource type="Script" uid="uid://bcmqxvlh3huaf" path="res://player.gd" id="1_ij6vw"]
 [ext_resource type="Texture2D" uid="uid://vtqt127c36m3" path="res://blender stuff/RENDER/0016.png" id="3_7hik5"]
 [ext_resource type="Texture2D" uid="uid://rju3sj4ukoxu" path="res://blender stuff/RENDER/0005.png" id="3_606se"]
-[ext_resource type="Script" uid="uid://6iw6p6paww2c" path="res://area_2d.gd" id="3_i3pqv"]
-[ext_resource type="PackedScene" uid="uid://dj4t2vikrxg3v" path="res://node_2d.tscn" id="4_hqtel"]
+[ext_resource type="Script" path="res://area_2d.gd" id="3_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://84co73edk0pn" path="res://blender stuff/RENDER/0017.png" id="4_qtqh7"]
 [ext_resource type="Texture2D" uid="uid://x5pugv5rnm7q" path="res://blender stuff/RENDER/0006.png" id="4_u1c27"]
 [ext_resource type="Texture2D" uid="uid://bo6kthgrnw2ld" path="res://blender stuff/RENDER/0018.png" id="5_2wuci"]
@@ -26,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://d30buv32ymt2y" path="res://blender stuff/RENDER/0025.png" id="12_hl5qd"]
 [ext_resource type="Texture2D" uid="uid://bnebvbtbn7gyo" path="res://blender stuff/RENDER/0026.png" id="13_ek41f"]
 [ext_resource type="Texture2D" uid="uid://dl5hc33vnqvgy" path="res://blender stuff/RENDER/0015.png" id="13_jm5j8"]
+[ext_resource type="PackedScene" uid="uid://dj4t2vikrxg3v" path="res://node_2d.tscn" id="26_7hik5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ij6vw"]
 atlas = ExtResource("1_f50pn")
@@ -285,7 +285,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_hqtel"]
 radius = 30.151
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
 texture_filter = 1
 motion_mode = 1
 floor_stop_on_slope = false
@@ -311,7 +311,7 @@ zoom = Vector2(6, 6)
 unique_name_in_owner = true
 scale = Vector2(0.41744, 0.41744)
 sprite_frames = SubResource("SpriteFrames_7hik5")
-animation = &"main"
+animation = &"camera"
 autoplay = "hidden"
 metadata/FlipUp = false
 
@@ -325,6 +325,8 @@ script = ExtResource("3_i3pqv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_hqtel")
 debug_color = Color(0.768627, 0, 0.180392, 0.823529)
+
+[node name="Node2D" parent="." instance=ExtResource("26_7hik5")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

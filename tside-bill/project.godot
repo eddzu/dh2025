@@ -29,6 +29,10 @@ window/size/sharp_corners=true
 
 import/blender/enabled=false
 
+[global_group]
+
+Player=""
+
 [input]
 
 run_script={

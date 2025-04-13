@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var sped: float = 100
+var sped: float = 10000
 
 func _physics_process(delta: float) -> void:
 	var dir = Input.get_vector("left", "right", "up", "down")
@@ -42,3 +42,24 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.has_method('going'):
 		body.going()
 	# hide the textbox
+
+
+func _on_wc_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		get_tree().change_scene_to_file("res://skret_room.tscn")
+	
+
+
+func _on_classroom_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		get_tree().change_scene_to_file("res://classroom.tscn")# Replace with function body.
+
+
+func _on_c_2m_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		get_tree().change_scene_to_file("res://main-hall.tscn")
+
+
+func _on_w_2m_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		get_tree().change_scene_to_file("res://main-hall.tscn")
