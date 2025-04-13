@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://77lxv7slngr7"]
+
+[ext_resource type="Texture2D" uid="uid://bosevi2nwfsuq" path="res://tiles/coffee_machine.png" id="1_rq0kd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujgln"]
+size = Vector2(539, 339)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30h7g"]
+size = Vector2(665, 241.5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CoffeeMachine" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-4, 3)
+texture = ExtResource("1_rq0kd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-10, 322.5)
+shape = SubResource("RectangleShape2D_ujgln")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-5.5, 432.25)
+shape = SubResource("RectangleShape2D_30h7g")
+debug_color = Color(0.620156, 0.372125, 0.965249, 0.42)

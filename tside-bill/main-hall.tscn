@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dh0ajbaabu74k"]
+[gd_scene load_steps=10 format=3 uid="uid://dkl8wo7t3mtwv"]
 
 [ext_resource type="Texture2D" uid="uid://bgr3f8o1fp52t" path="res://Levels/hall.png" id="1_jju4g"]
 [ext_resource type="PackedScene" uid="uid://dncvxo6jlrayx" path="res://player.tscn" id="2_2tbw6"]
 [ext_resource type="PackedScene" uid="uid://63822wirtqub" path="res://cat.tscn" id="3_2tbw6"]
+[ext_resource type="PackedScene" uid="uid://77lxv7slngr7" path="res://coffee_machine.tscn" id="4_6t13i"]
+[ext_resource type="Script" uid="uid://dfkxskh8wfjam" path="res://coffee_machine.gd" id="5_pbbwy"]
+[ext_resource type="PackedScene" uid="uid://b61w4wh0mmgvu" path="res://textbox.tscn" id="6_k5sql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jju4g"]
 size = Vector2(12.0847, 5.35548)
@@ -74,6 +77,13 @@ position = Vector2(-80, 45)
 
 [node name="cat" parent="." instance=ExtResource("3_2tbw6")]
 position = Vector2(-791, -8)
+
+[node name="coffee machine" parent="." instance=ExtResource("4_6t13i")]
+position = Vector2(230, -37)
+scale = Vector2(0.0800025, 0.0800025)
+script = ExtResource("5_pbbwy")
+
+[node name="textbox" parent="." instance=ExtResource("6_k5sql")]
 
 [connection signal="body_entered" from="StaticBody2D/Classroom" to="CharacterBody2D" method="_on_classroom_body_entered"]
 [connection signal="body_entered" from="StaticBody2D/WC" to="CharacterBody2D" method="_on_wc_body_entered"]
