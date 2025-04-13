@@ -27,6 +27,9 @@ polygon = PackedVector2Array(-3918, -167, -3918, 611, -3968, 627, -3990, -167)
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-862.504, 131.251, -868.754, 337.502, -943.754, 387.502, -1050, 400.002, -2212.51, 406.252, -2300.01, 331.251, -2287.51, 131.251)
 
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+scale = Vector2(1.50824, 0.932053)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
@@ -39,4 +42,4 @@ grow_vertical = 2
 color = Color(0.0728426, 0.0728426, 0.0728426, 1)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_2tbw6")]
-scale = Vector2(1, 1)
+position = Vector2(-53, 73)
