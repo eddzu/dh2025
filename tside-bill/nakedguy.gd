@@ -42,4 +42,3 @@ func type_text(full_text):
 
 func going():
 	blackbox.visible = false
-	hasKey = true

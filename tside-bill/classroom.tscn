@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkqypp50dnid0"]
+[gd_scene load_steps=9 format=3 uid="uid://dkqypp50dnid0"]
 
 [ext_resource type="Texture2D" uid="uid://bn1icfq82wl7j" path="res://Levels/classroom.png" id="1_ysqh3"]
 [ext_resource type="PackedScene" uid="uid://dncvxo6jlrayx" path="res://player.tscn" id="2_2hgm5"]
@@ -67,12 +67,13 @@ position = Vector2(505.304, 756.352)
 scale = Vector2(1.49014, 0.595471)
 shape = SubResource("RectangleShape2D_pq1j3")
 
-[node name="CharacterBody2D" parent="." groups=["Player"] instance=ExtResource("2_2hgm5")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_2hgm5")]
 position = Vector2(168, 212)
 
-[connection signal="body_entered" from="StaticBody2D/c2m" to="CharacterBody2D" method="_on_c_2m_body_entered"]
 [node name="dida" parent="." instance=ExtResource("3_wx4mr")]
-position = Vector2(226, 102)
+position = Vector2(165, 133)
 
 [node name="textbox" parent="." instance=ExtResource("4_wnraa")]
 position = Vector2(72, 255)
+
+[connection signal="body_entered" from="StaticBody2D/c2m" to="CharacterBody2D" method="_on_c_2m_body_entered"]
