@@ -1,10 +1,3 @@
-[gd_scene load_steps=2 format=3 uid="uid://18frg1u4bj7x"]
+[gd_scene format=3 uid="uid://18frg1u4bj7x"]
 
-[ext_resource type="Script" uid="uid://nbh3i7sephya" path="res://api_call.gd" id="1_emshm"]
-
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_emshm")
-
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="api_call" type="Node2D"]

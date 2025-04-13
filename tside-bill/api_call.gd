@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var label_node = $Label
+
+class_name APICall
 
 
 var data_json_path_godot = "user://data.json"
@@ -14,6 +15,8 @@ func _ready():
 	if name == "":
 		print("No valid 'name' found in data.json, skipping script.")
 		return
+
+	print(api_answer("grumpy"));
 
 func api_answer(person):
 	run_script_with_item(name, person)
@@ -74,10 +77,12 @@ func run_script_with_item(name: String, person: String):
 		var response_data = parser.get_data()
 
 		if response_data.has("text_answer"):
-			label_node.text = response_data["text_answer"]
 			print("Professor's reply:", response_data["text_answer"])
+			return(response_data["text_answer"])
 		else:
 			print("❌ No 'text_answer' key in the returned JSON.")
+			return("")
 	else:
 		print("❌ JSON parse error from second script:", parser.get_error_message())
 		print("Raw output:\n", raw_output)
+		return("")
