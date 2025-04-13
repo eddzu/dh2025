@@ -21,7 +21,7 @@ func interact():
 	if not GlobalScript.visited_rooms.has("classroom"):
 		blackbox.visible = true
 		#target_node.text = "changed text"
-		full_text = "Ugh, it's you... I suppose you want that key, but first, fetch me a coffee. \n It should be from the vending machine, which existed already when I was studying here... Nostalgic."
+		full_text = "Ugh, it's you... I suppose you want that key, but first, fetch me a coffee. \n It should be from my beloved vending machine!"
 		GlobalScript.visited_rooms["classroom"] = true
 		type_text(full_text)
 		has_interacted = true

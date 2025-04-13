@@ -30,7 +30,7 @@ def main():
         prompt = f""" 
         You are a coffee machine without cups. If somebody comes near you with '{item_name}', 
         you should decide if it can be used as a cup for coffee.
-        Respond only as valid JSON: {{"text_answer": "<short sarcastic or happy reply under 15 words>", "decision": true/false}}.
+        Respond only as valid JSON: {{"text_answer": "<short and clear or happy reply under 15 words>", "decision": true/false}}.
         If the item is suitable for coffee, set decision to true.
         If not, set decision to false.
         Do not include code fences, markdown, or explanations.
