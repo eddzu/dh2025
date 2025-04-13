@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://hlxn4v7m1pax"]
+
+[ext_resource type="Script" uid="uid://dyc1vklqkimvr" path="res://title_screen.gd" id="1_v6p8y"]
+[ext_resource type="Texture2D" uid="uid://ysxb2xm7cl6u" path="res://tiles/title_screen/bg.png" id="2_013yr"]
+[ext_resource type="Texture2D" uid="uid://cdhjtf6k23eoj" path="res://tiles/title_screen/start.png" id="3_8vmu4"]
+[ext_resource type="Texture2D" uid="uid://bb4tqpa0yv7gr" path="res://tiles/title_screen/start_darkened_30.png" id="4_xfn3p"]
+[ext_resource type="Texture2D" uid="uid://cs7co5m5x5gl" path="res://tiles/title_screen/options.png" id="5_rhgbh"]
+[ext_resource type="Texture2D" uid="uid://dmuvvh0tguomg" path="res://tiles/title_screen/options_darkened_30.png" id="6_skmiq"]
+[ext_resource type="Texture2D" uid="uid://cffk1rxqw3707" path="res://tiles/title_screen/exit.png" id="7_lf08s"]
+[ext_resource type="Texture2D" uid="uid://bym5n4f8vft7k" path="res://tiles/title_screen/exit_darkened_30.png" id="8_n1yhu"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -142.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v6p8y")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 1538.0
+offset_bottom = 1027.0
+scale = Vector2(0.746402, 0.627019)
+texture = ExtResource("2_013yr")
+
+[node name="StartButton" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 392.0
+offset_right = 1125.0
+offset_bottom = 554.0
+texture_normal = ExtResource("3_8vmu4")
+texture_pressed = ExtResource("4_xfn3p")
+texture_hover = ExtResource("4_xfn3p")
+
+[node name="OptionsButton" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 570.0
+offset_right = 1126.0
+offset_bottom = 732.0
+texture_normal = ExtResource("5_rhgbh")
+texture_pressed = ExtResource("6_skmiq")
+texture_hover = ExtResource("6_skmiq")
+
+[node name="Quit" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 752.0
+offset_right = 1127.0
+offset_bottom = 914.0
+texture_normal = ExtResource("7_lf08s")
+texture_pressed = ExtResource("8_n1yhu")
+texture_hover = ExtResource("8_n1yhu")
+
+[connection signal="pressed" from="TextureRect/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="TextureRect/Quit" to="." method="_on_quit_pressed"]
