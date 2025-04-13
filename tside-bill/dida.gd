@@ -18,13 +18,13 @@ func interact():
 	if not has_interacted:
 		blackbox.visible = true
 		#target_node.text = "changed text"
-		full_text = "Neki funny"
+		full_text = "This is the new animated text! I need to generate a really\nlong text so that i can test this functionality itd itd"
 		
 		type_text(full_text)
 		has_interacted = true
 	else:
 		blackbox.visible = true
-		full_text = "Go away!"
+		full_text = "Did you bring anything useful?"
 		type_text(full_text)
 
 func type_text(full_text):
