@@ -21,7 +21,11 @@ var detected_color: String = ""
 
 func _ready():
 	# Example: place the sprite in the center of the screen on startup
-	sprite_node.position = get_viewport_rect().size / 2
+	# sprite_node.position = get_viewport_rect().size / 2
+	pass
+
+func clear_textur():
+	sprite_node.texture=null
 
 func _input(event):
 	if event.is_action_pressed("run_script") and fon.get_meta("FlipUp",false):

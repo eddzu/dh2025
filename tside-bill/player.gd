@@ -71,3 +71,8 @@ func _on_c_2m_body_entered(body: Node2D) -> void:
 func _on_w_2m_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		get_tree().change_scene_to_file("res://main-hall.tscn")
+
+
+func _on_cat_zone_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		%Node2D.clear_textur()

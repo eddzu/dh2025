@@ -87,6 +87,8 @@ position = Vector2(-80, 45)
 
 [node name="textbox" parent="." instance=ExtResource("6_k5sql")]
 
+[connection signal="property_list_changed" from="." to="CharacterBody2D" method="_on_node_2d_property_list_changed"]
 [connection signal="body_entered" from="StaticBody2D/Classroom" to="CharacterBody2D" method="_on_classroom_body_entered"]
 [connection signal="body_entered" from="StaticBody2D/WC" to="CharacterBody2D" method="_on_wc_body_entered"]
 [connection signal="body_entered" from="StaticBody2D/CatZone" to="cat" method="_on_cat_zone_body_entered"]
+[connection signal="body_entered" from="StaticBody2D/CatZone" to="CharacterBody2D" method="_on_cat_zone_body_entered"]
