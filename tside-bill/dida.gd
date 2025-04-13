@@ -30,7 +30,7 @@ func interact():
 		if (GlobalScript.hasCoffee):
 			var result = ApiCall.api_answer("grumpy")
 			if result.has("text_answer"):
-				text_answer = result["text_answer"]
+				text_answer = result["text_answer"] + "\n Here is your key!"
 			else: 
 				text_answer = "This item is no good!";
 			if result.has("decision"):

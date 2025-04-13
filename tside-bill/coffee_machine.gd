@@ -18,20 +18,20 @@ func _ready():
 	blackbox.visible = false
 
 func interact():
-		full_text = "You stare longingly at the machine. It stares back, silently judging you."
-		var result = ApiCall.api_answer("grumpy")
-		if result.has("text_answer"):
-			full_text = result["text_answer"]
-		else: 
-			full_text = "This item is no good!";
-		if result.has("decision"):
-			decision = result["decision"]
-			GlobalScript.hasCoffee = true;
-		else:
-			decision = false;
-			
-		blackbox.visible = true;
-		type_text(full_text);
+	full_text = "You stare longingly at the machine. It stares back, silently judging you."
+	var result = ApiCall.api_answer("grumpy")
+	if result.has("text_answer"):
+		full_text = result["text_answer"]
+	else: 
+		full_text = "This item is no good!";
+	if result.has("decision"):
+		decision = result["decision"]
+		GlobalScript.hasCoffee = true;
+	else:
+		decision = false;
+		
+	blackbox.visible = true;
+	type_text(full_text);
 		
 		
 			
