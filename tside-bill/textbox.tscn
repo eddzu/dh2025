@@ -1,7 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://b61w4wh0mmgvu"]
 
 [ext_resource type="FontFile" uid="uid://b3urh6cg1bmph" path="res://Pixellari.ttf" id="1_vng66"]
-[ext_resource type="Script" uid="uid://bugw621dfo0yt" path="res://label.gd" id="2_ptcjm"]
+
+[sub_resource type="GDScript" id="GDScript_vng66"]
+script/source = "extends Label
+"
 
 [node name="textbox" type="Node2D"]
 
@@ -30,4 +33,4 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_vng66")
 theme_override_font_sizes/font_size = 54
 text = "testni tekst"
-script = ExtResource("2_ptcjm")
+script = SubResource("GDScript_vng66")
