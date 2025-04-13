@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://4lxe14qn3f1n"]
+[gd_scene load_steps=9 format=3 uid="uid://4lxe14qn3f1n"]
 
 [ext_resource type="Texture2D" uid="uid://cpocfwd8ihig2" path="res://tiles/wc.png" id="1_motb0"]
 [ext_resource type="PackedScene" uid="uid://dncvxo6jlrayx" path="res://player.tscn" id="2_1efw3"]
 [ext_resource type="PackedScene" uid="uid://b61w4wh0mmgvu" path="res://textbox.tscn" id="3_1efw3"]
 [ext_resource type="PackedScene" uid="uid://df8gegn7uv80v" path="res://npc.tscn" id="4_if1ef"]
+[ext_resource type="PackedScene" uid="uid://bmdvpu67dic5e" path="res://nakedguy.tscn" id="5_8gfim"]
+[ext_resource type="Script" uid="uid://b6hud4ylniyii" path="res://nakedguy.gd" id="6_4mulk"]
+[ext_resource type="PackedScene" uid="uid://63822wirtqub" path="res://cat.tscn" id="7_4mulk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_motb0"]
 radius = 53.0094
@@ -47,3 +50,10 @@ position = Vector2(-46, 18)
 
 [node name="npc" parent="." instance=ExtResource("4_if1ef")]
 position = Vector2(-71, 25)
+
+[node name="nakedguy" parent="." instance=ExtResource("5_8gfim")]
+position = Vector2(17, 33)
+script = ExtResource("6_4mulk")
+
+[node name="cat" parent="." instance=ExtResource("7_4mulk")]
+position = Vector2(2, 73)

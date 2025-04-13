@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://coegt1ovlw2la"]
+[gd_scene load_steps=16 format=3 uid="uid://bmdvpu67dic5e"]
 
 [ext_resource type="Texture2D" uid="uid://cxjt5c8y8368v" path="res://sprites/nakedguy.png" id="1_6w751"]
 
@@ -121,7 +121,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yb2e4"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_6w751"]
+radius = 18.0278
 
 [node name="nakedguy" type="CharacterBody2D"]
 
@@ -129,4 +130,4 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_aoaas")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_yb2e4")
+shape = SubResource("CircleShape2D_6w751")

@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkqypp50dnid0"]
+
+[ext_resource type="Texture2D" uid="uid://bn1icfq82wl7j" path="res://Levels/classroom.png" id="1_ysqh3"]
+[ext_resource type="PackedScene" uid="uid://dncvxo6jlrayx" path="res://player.tscn" id="2_2hgm5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hgm5"]
+size = Vector2(473, 139)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wx4mr"]
+size = Vector2(461.5, 134)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnraa"]
+size = Vector2(216.5, 137.5)
+
+[node name="classroom" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(0.359999, 0.359999)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(406, 740, -181, 745, -177, 208, 1076, 211, 1074, 745, 601, 748, 599, 766, 1166, 770, 1167, -76, -266, -76, -264, 760, 406, 768)
+
+[node name="Classroom" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(448, 345)
+texture = ExtResource("1_ysqh3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(152.5, 434.5)
+shape = SubResource("RectangleShape2D_2hgm5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(771.25, 429)
+shape = SubResource("RectangleShape2D_wx4mr")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(769, 618)
+shape = SubResource("RectangleShape2D_wx4mr")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(150, 614)
+shape = SubResource("RectangleShape2D_wx4mr")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(454, 289)
+shape = SubResource("RectangleShape2D_wnraa")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_2hgm5")]
+position = Vector2(168, 212)
