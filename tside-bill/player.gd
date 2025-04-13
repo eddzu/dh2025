@@ -21,5 +21,15 @@ func _physics_process(delta: float) -> void:
 	else:
 		%AnimatedSprite2D.stop()
 
-	move_and_slide()
-	
+	move_and_slide()	
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.has_method('interact'):
+		#show textbox
+		body.interact()
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.has_method('going'):
+		body.going()
+	# hide the textbox

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cllah1bg88mow"]
+
+[ext_resource type="Script" uid="uid://3q1qd7ea8kb2" path="res://cam_sprite.gd" id="1_xs4qr"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CamSprite" type="Sprite2D" parent="."]
+script = ExtResource("1_xs4qr")
