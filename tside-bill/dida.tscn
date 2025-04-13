@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://cifc2nmqoiuei"]
+[gd_scene load_steps=17 format=3 uid="uid://cifc2nmqoiuei"]
 
+[ext_resource type="Script" uid="uid://tuubr8lmxpu2" path="res://dida.gd" id="1_0fyho"]
 [ext_resource type="Texture2D" uid="uid://bi4h3bqr41ssc" path="res://sprites/dida.png" id="1_m65kf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fyho"]
@@ -124,6 +125,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m65kf"]
 
 [node name="dida" type="CharacterBody2D"]
+script = ExtResource("1_0fyho")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
