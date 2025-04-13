@@ -26,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://d30buv32ymt2y" path="res://blender stuff/RENDER/0025.png" id="12_hl5qd"]
 [ext_resource type="Texture2D" uid="uid://bnebvbtbn7gyo" path="res://blender stuff/RENDER/0026.png" id="13_ek41f"]
 [ext_resource type="Texture2D" uid="uid://dl5hc33vnqvgy" path="res://blender stuff/RENDER/0015.png" id="13_jm5j8"]
->>>>>>> Stashed changes
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ij6vw"]
 atlas = ExtResource("1_f50pn")
