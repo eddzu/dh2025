@@ -1,8 +1,32 @@
-[gd_scene load_steps=23 format=3 uid="uid://dncvxo6jlrayx"]
+[gd_scene load_steps=47 format=3 uid="uid://dncvxo6jlrayx"]
 
 [ext_resource type="Texture2D" uid="uid://nj87hk12njr5" path="res://sprites/hero.png" id="1_f50pn"]
 [ext_resource type="Script" uid="uid://bcmqxvlh3huaf" path="res://player.gd" id="1_ij6vw"]
+[ext_resource type="Texture2D" uid="uid://vtqt127c36m3" path="res://blender stuff/RENDER/0016.png" id="3_7hik5"]
+[ext_resource type="Texture2D" uid="uid://rju3sj4ukoxu" path="res://blender stuff/RENDER/0005.png" id="3_606se"]
 [ext_resource type="Script" uid="uid://6iw6p6paww2c" path="res://area_2d.gd" id="3_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://dj4t2vikrxg3v" path="res://node_2d.tscn" id="4_hqtel"]
+[ext_resource type="Texture2D" uid="uid://84co73edk0pn" path="res://blender stuff/RENDER/0017.png" id="4_qtqh7"]
+[ext_resource type="Texture2D" uid="uid://x5pugv5rnm7q" path="res://blender stuff/RENDER/0006.png" id="4_u1c27"]
+[ext_resource type="Texture2D" uid="uid://bo6kthgrnw2ld" path="res://blender stuff/RENDER/0018.png" id="5_2wuci"]
+[ext_resource type="Texture2D" uid="uid://o4hih4r0vp7y" path="res://blender stuff/RENDER/0007.png" id="5_op7ga"]
+[ext_resource type="Texture2D" uid="uid://b5wc102k4se6i" path="res://blender stuff/RENDER/0019.png" id="6_iruf7"]
+[ext_resource type="Texture2D" uid="uid://bew5tnhflf8mv" path="res://blender stuff/RENDER/0008.png" id="6_q13i1"]
+[ext_resource type="Texture2D" uid="uid://bt0ysn3anl4il" path="res://blender stuff/RENDER/0020.png" id="7_j5n4i"]
+[ext_resource type="Texture2D" uid="uid://dpwpftq8oipxo" path="res://blender stuff/RENDER/0009.png" id="7_pylmc"]
+[ext_resource type="Texture2D" uid="uid://bv0aafd4iih2" path="res://blender stuff/RENDER/0021.png" id="8_634y6"]
+[ext_resource type="Texture2D" uid="uid://dh8gmndvgn85l" path="res://blender stuff/RENDER/0010.png" id="8_pbfsw"]
+[ext_resource type="Texture2D" uid="uid://d4aibcsa42edp" path="res://blender stuff/RENDER/0011.png" id="9_5tmop"]
+[ext_resource type="Texture2D" uid="uid://dejobnwmmurfb" path="res://blender stuff/RENDER/0022.png" id="9_efrwb"]
+[ext_resource type="Texture2D" uid="uid://d3sdrlvafy4n1" path="res://blender stuff/RENDER/0012.png" id="10_7ahtn"]
+[ext_resource type="Texture2D" uid="uid://64d5cxd78xyx" path="res://blender stuff/RENDER/0023.png" id="10_hiqhm"]
+[ext_resource type="Texture2D" uid="uid://bxntk1s751ngq" path="res://blender stuff/RENDER/0013.png" id="11_7lmhl"]
+[ext_resource type="Texture2D" uid="uid://b00otlxcm8xp4" path="res://blender stuff/RENDER/0024.png" id="11_tkwlq"]
+[ext_resource type="Texture2D" uid="uid://cptf4ljitc4vr" path="res://blender stuff/RENDER/0014.png" id="12_dx0e4"]
+[ext_resource type="Texture2D" uid="uid://d30buv32ymt2y" path="res://blender stuff/RENDER/0025.png" id="12_hl5qd"]
+[ext_resource type="Texture2D" uid="uid://bnebvbtbn7gyo" path="res://blender stuff/RENDER/0026.png" id="13_ek41f"]
+[ext_resource type="Texture2D" uid="uid://dl5hc33vnqvgy" path="res://blender stuff/RENDER/0015.png" id="13_jm5j8"]
+>>>>>>> Stashed changes
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ij6vw"]
 atlas = ExtResource("1_f50pn")
@@ -159,6 +183,106 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ij6vw"]
 size = Vector2(11, 12)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_7hik5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7hik5")
+}],
+"loop": false,
+"name": &"camera",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_qtqh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2wuci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iruf7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_j5n4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_634y6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_efrwb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hiqhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tkwlq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hl5qd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ek41f")
+}],
+"loop": false,
+"name": &"flip_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_606se")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u1c27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_op7ga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q13i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pylmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pbfsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5tmop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7ahtn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7lmhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dx0e4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jm5j8")
+}],
+"loop": false,
+"name": &"flip_up",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_ek41f")
+}],
+"loop": false,
+"name": &"hidden",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_jm5j8")
+}],
+"loop": false,
+"name": &"main",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_hqtel"]
 radius = 30.151
 
@@ -182,8 +306,15 @@ shape = SubResource("RectangleShape2D_ij6vw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 1.00451)
-scale = Vector2(1.00813, 0.992467)
-zoom = Vector2(5, 5)
+zoom = Vector2(6, 6)
+
+[node name="fon" type="AnimatedSprite2D" parent="Camera2D"]
+unique_name_in_owner = true
+scale = Vector2(0.41744, 0.41744)
+sprite_frames = SubResource("SpriteFrames_7hik5")
+animation = &"main"
+autoplay = "hidden"
+metadata/FlipUp = false
 
 [node name="Marker2D" type="Marker2D" parent="."]
 unique_name_in_owner = true

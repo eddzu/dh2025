@@ -14,8 +14,10 @@ func _ready():
 	sprite.position = get_viewport_rect().size / 2
 
 func _input(event):
-	if event.is_action_pressed("run_script"):
+	if event.is_action_pressed("run_script") and %fon.get_meta("FlipUp",false):
+		%fon.play("camera")
 		run_python_script()
+		%fon.play("main")
 
 func run_python_script():
 	# 1. Find the *actual OS path* for user://output2.png

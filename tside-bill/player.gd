@@ -4,7 +4,7 @@ var sped: float = 100
 
 func _physics_process(delta: float) -> void:
 	var dir = Input.get_vector("left", "right", "up", "down")
-	velocity = dir * Vector2(sped, sped)
+	velocity = dir * Vector2(sped, sped) * delta
 	
 	# Determine which animation to play based on direction
 	if dir != Vector2.ZERO:
@@ -22,6 +22,15 @@ func _physics_process(delta: float) -> void:
 		%AnimatedSprite2D.stop()
 
 	move_and_slide()	
+
+func _input(event) -> void:
+	if event.is_action_pressed("phone"):
+		if not %fon.get_meta("FlipUp"):
+			%fon.play("flip_up")
+			%fon.set_meta("FlipUp",true)
+		else:
+			%fon.play("flip_down")
+			%fon.set_meta("FlipUp",false)
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
