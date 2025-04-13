@@ -59,7 +59,7 @@ position = Vector2(-26, 73)
 z_index = 1
 position = Vector2(-46, 18)
 
-[node name="nakedguy" parent="." instance=ExtResource("5_8gfim")]
+[node name="nakedguy2" parent="." instance=ExtResource("5_8gfim")]
 position = Vector2(15, 18)
 script = ExtResource("6_4mulk")
 

@@ -5,17 +5,19 @@ var python_script_path = ProjectSettings.globalize_path("res://gemini/script.py"
 
 var thread := Thread.new()
 
-# This is the *Godot* path where we want the final file. We'll load from here:
-var user_output_path_godot = "user://output2.png"
+
 # Output image path (in user://). The Python script will also place data.json in the same folder.
-var user_output_path_godot = "user://output.png"
+var user_output_path_godot = "user://output2.png"
 var data_json_path_godot = "user://data.json"
 
 # We'll store the JSON data here for later usage (another API call, etc.)
 var detected_name: String = ""
 var detected_color: String = ""
 
+
+@onready var marker = %Marker2D
 @onready var sprite_node = $objectSpawner  # Example sprite node in your scene
+@onready var fon = %fon
 
 func _ready():
 	# Example: place the sprite in the center of the screen on startup
@@ -46,9 +48,8 @@ func run_python_script():
 
 	# 3. After the script is done, load the image from user://
 	call_deferred("load_output_image")
+	call_deferred("load_data_json")
 
-	# 4) Load and parse data.json to store the "name" and "color" for later
-	load_data_json()
 
 func load_output_image():
 	fon.play("main")
@@ -66,6 +67,8 @@ func load_output_image():
 		sprite_node.texture = texture
 		# Example: reset scale or adjust as needed
 		sprite_node.scale = Vector2(1, 1)
+		
+		sprite_node.global_position = marker.global_position
 		print("✅ Loaded output image from user:// and applied to sprite.")
 	else:
 		print("❌ Failed to create texture from the loaded image.")
