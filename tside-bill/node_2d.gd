@@ -22,10 +22,11 @@ var detected_color: String = ""
 func _ready():
 	# Example: place the sprite in the center of the screen on startup
 	# sprite_node.position = get_viewport_rect().size / 2
-	pass
 
+	sprite_node.texture = GlobalScript.itemPic
 func clear_textur():
-	sprite_node.texture=null
+	GlobalScript.itemPic = null
+	sprite_node.texture = null
 
 func _input(event):
 	if event.is_action_pressed("run_script") and fon.get_meta("FlipUp",false):
@@ -68,6 +69,7 @@ func load_output_image():
 	var texture = ImageTexture.create_from_image(raw_image)
 
 	if texture:
+		GlobalScript.itemPic = texture
 		sprite_node.texture = texture
 		# Example: reset scale or adjust as needed
 		sprite_node.scale = Vector2(1, 1)

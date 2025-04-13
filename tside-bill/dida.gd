@@ -26,6 +26,7 @@ func interact():
 		type_text(full_text)
 		has_interacted = true
 	else:
+		var decsision = false
 		if (GlobalScript.hasCoffee):
 			var result = ApiCall.api_answer("grumpy")
 			if result.has("text_answer"):
@@ -33,12 +34,14 @@ func interact():
 			else: 
 				text_answer = "This item is no good!";
 			if result.has("decision"):
-				var decision = result["decision"]
+				decsision = result["decision"]
 			else:
-				var decision = false;
+				decsision = false;
 		else:
 			text_answer = "Pfff, I only want coffee from FRI coffee machine!"
-			
+		
+		if decsision:
+			GlobalScript.itemPic= load("res://sprites/kljuc.png")
 		blackbox.visible = true
 		full_text = text_answer;
 		#full_text = "Thank you for the delicious coffee!"

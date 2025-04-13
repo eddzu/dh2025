@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bcmqxvlh3huaf" path="res://player.gd" id="1_ij6vw"]
 [ext_resource type="Texture2D" uid="uid://vtqt127c36m3" path="res://blender stuff/RENDER/0016.png" id="3_7hik5"]
 [ext_resource type="Texture2D" uid="uid://rju3sj4ukoxu" path="res://blender stuff/RENDER/0005.png" id="3_606se"]
-[ext_resource type="Script" path="res://area_2d.gd" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://6iw6p6paww2c" path="res://area_2d.gd" id="3_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://84co73edk0pn" path="res://blender stuff/RENDER/0017.png" id="4_qtqh7"]
 [ext_resource type="Texture2D" uid="uid://x5pugv5rnm7q" path="res://blender stuff/RENDER/0006.png" id="4_u1c27"]
 [ext_resource type="Texture2D" uid="uid://bo6kthgrnw2ld" path="res://blender stuff/RENDER/0018.png" id="5_2wuci"]
