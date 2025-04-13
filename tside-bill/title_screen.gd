@@ -2,7 +2,7 @@ extends Control
 
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://fri.tscn")
+	get_tree().change_scene_to_file("res://main-hall.tscn")
 	pass # Replace with function body.
 
 

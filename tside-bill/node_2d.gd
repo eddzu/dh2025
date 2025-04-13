@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var marker = get_node("/root/CharacterBody2D/Marker2D")
 # Path to your Python file in the project:
 var python_script_path = ProjectSettings.globalize_path("res://gemini/script.py")
 
@@ -34,20 +35,26 @@ func run_python_script():
 	load_output_image()
 
 func load_output_image():
-	# Instead of ResourceLoader, let’s read the raw PNG bytes from user://
 	var raw_image = Image.new()
 	var error_code = raw_image.load(user_output_path_godot)
 	
 	if error_code == OK:
-		# Convert the raw image to a Texture2D
+		# Resize image to 64x64 pixels
+		raw_image.resize(8, 8, Image.INTERPOLATE_LANCZOS)
+
 		var texture = ImageTexture.create_from_image(raw_image)
 		if texture:
 			sprite.texture = texture
-			sprite.scale = Vector2(0.2, 0.2)  # scale down to 20% size
-			sprite.position = get_viewport_rect().size / 2  # center it
-			print("✅ Loaded image from user:// and showed on sprite.")
+			sprite.scale = Vector2.ONE  # no scaling needed, already resized
+
+			if marker:
+				sprite.position = marker.global_position
+			else:
+				print("⚠️ Marker2D not found! Falling back to center.")
+				sprite.position = get_viewport_rect().size / 2
+
+			print("✅ Loaded and resized image to 64x64.")
 		else:
-			print("❌ Could not create texture from Image.")
+			print("❌ Failed to create texture.")
 	else:
-		print("❌ load() returned code:", error_code, 
-			  " – couldn’t load user://output2.png")
+		print("❌ load() returned code:", error_code)

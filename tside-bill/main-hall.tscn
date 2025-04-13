@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh0ajbaabu74k"]
+
+[ext_resource type="Texture2D" uid="uid://bgr3f8o1fp52t" path="res://Levels/hall.png" id="1_jju4g"]
+[ext_resource type="PackedScene" uid="uid://dncvxo6jlrayx" path="res://player.tscn" id="2_2tbw6"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(0.159999, 0.159999)
+
+[node name="Hall" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-1281, 129)
+texture = ExtResource("1_jju4g")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-3912, -73, -3036, -64, -3033, 8, -2593, 18, -2597, -73, -889, -73, -886, 15, -450, 5, -444, -73, 1351, -67, 1354, -123, 2233, 1942, 1461, -130, -3936, -127)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1354, -120, 1354, 636, 1391, 642, 1385, -123)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(1391, 598, -3949, 589, -3949, 642, 1392, 642)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-3918, -167, -3918, 611, -3968, 627, -3990, -167)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-862.504, 131.251, -868.754, 337.502, -943.754, 387.502, -1050, 400.002, -2212.51, 406.252, -2300.01, 331.251, -2287.51, 131.251)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_2tbw6")]
+position = Vector2(164, 57)
