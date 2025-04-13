@@ -67,11 +67,11 @@ position = Vector2(505.304, 756.352)
 scale = Vector2(1.49014, 0.595471)
 shape = SubResource("RectangleShape2D_pq1j3")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_2hgm5")]
-position = Vector2(168, 212)
-
 [node name="dida" parent="." instance=ExtResource("3_wx4mr")]
 position = Vector2(165, 133)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_2hgm5")]
+position = Vector2(168, 212)
 
 [node name="textbox" parent="." instance=ExtResource("4_wnraa")]
 position = Vector2(72, 255)

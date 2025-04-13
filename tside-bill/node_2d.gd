@@ -4,6 +4,8 @@ extends Node2D
 # Path to your Python file in the project:
 var python_script_path = ProjectSettings.globalize_path("res://gemini/script.py")
 
+var thread := Thread.new()
+
 # This is the *Godot* path where we want the final file. We'll load from here:
 var user_output_path_godot = "user://output2.png"
 
@@ -15,9 +17,8 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("run_script") and fon.get_meta("FlipUp",false):
-		fon.play("flip_down")
-		run_python_script()
-		fon.play("main")
+		fon.play("camera")
+		thread.start(self.run_python_script)
 
 func run_python_script():
 	# 1. Find the *actual OS path* for user://output2.png
@@ -34,9 +35,10 @@ func run_python_script():
 	)
 
 	# 3. After the script is done, load the image from user://
-	load_output_image()
+	call_deferred("load_output_image")
 
 func load_output_image():
+	fon.play("main")
 	var raw_image = Image.new()
 	var error_code = raw_image.load(user_output_path_godot)
 	
