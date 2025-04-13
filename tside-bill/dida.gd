@@ -9,8 +9,10 @@ var has_interacted = false
 
 func _ready():
 	# Directly access the node using the full path
-	target_node = get_node("/root/SkretRoom/textbox/CanvasLayer/ColorRect/HBoxContainer/Label")
-	blackbox = get_node("/root/SkretRoom/textbox/CanvasLayer")
+	target_node = get_node("/root/classroom/textbox/CanvasLayer/ColorRect/HBoxContainer/Label")#/SkretRoom/textbox/CanvasLayer/ColorRect/HBoxContainer/Label")
+	print(target_node)
+	blackbox = get_node("/root/classroom/textbox/CanvasLayer")
+	print(blackbox)
 	#target_node.visible = false
 	blackbox.visible = false
 
@@ -18,7 +20,7 @@ func interact():
 	if not has_interacted:
 		blackbox.visible = true
 		#target_node.text = "changed text"
-		full_text = "This is the new animated text! I need to generate a really\nlong text so that i can test this functionality itd itd"
+		full_text = "Ugh, it's you... I suppose you want that key, but first, fetch me a coffee. It should be from the vending machine,\nwhich existed already when I was studying here... Nostalgic."
 		
 		type_text(full_text)
 		has_interacted = true
