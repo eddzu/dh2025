@@ -48,16 +48,16 @@ shape = SubResource("CircleShape2D_motb0")
 position = Vector2(-3.57144, 392.857)
 shape = SubResource("RectangleShape2D_4mulk")
 
+[node name="nakedguy" parent="." instance=ExtResource("5_8gfim")]
+position = Vector2(15, 18)
+script = ExtResource("6_4mulk")
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_1efw3")]
 position = Vector2(-26, 73)
 
 [node name="textbox" parent="." instance=ExtResource("3_1efw3")]
 z_index = 1
 position = Vector2(-46, 18)
-
-[node name="nakedguy" parent="." instance=ExtResource("5_8gfim")]
-position = Vector2(15, 18)
-script = ExtResource("6_4mulk")
 
 [connection signal="body_entered" from="StaticBody2D/w2m" to="CharacterBody2D" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="StaticBody2D/w2m" to="CharacterBody2D" method="_on_w_2m_body_entered"]

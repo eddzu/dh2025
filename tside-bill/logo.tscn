@@ -1,7 +1,7 @@
 [gd_scene load_steps=83 format=3 uid="uid://doqmkc4lokiby"]
 
 [ext_resource type="Texture2D" uid="uid://c40locd53m8oj" path="res://blender stuff/Logo/RENDER/0080.png" id="1_uscx1"]
-[ext_resource type="Script" path="res://logo_player.gd" id="1_xuaar"]
+[ext_resource type="Script" uid="uid://da6yhy70ruu7y" path="res://logo_player.gd" id="1_xuaar"]
 [ext_resource type="Texture2D" uid="uid://ccbkekdhuwe1x" path="res://blender stuff/Logo/RENDER/0001.png" id="2_xuaar"]
 [ext_resource type="Texture2D" uid="uid://g8vf0rb3rgli" path="res://blender stuff/Logo/RENDER/0002.png" id="3_65u5e"]
 [ext_resource type="Texture2D" uid="uid://dmm878dikloui" path="res://blender stuff/Logo/RENDER/0003.png" id="4_abavy"]

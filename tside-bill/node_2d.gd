@@ -18,6 +18,10 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("run_script") and fon.get_meta("FlipUp",false):
 		fon.play("camera")
+		if thread.is_alive():
+			print("Thread buisy..")
+			return
+		thread=Thread.new()
 		thread.start(self.run_python_script)
 
 func run_python_script():
